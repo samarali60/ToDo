@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types'
-
+import styles from './style.module.css'
 const TodoItem = ({ todo, index, deleteTodo, toggleTodo }) => {
     return (
-        <div>
-            <li>
+        <> <div className={styles.todoContainer}>
+            <li className={styles.todoItem}  key={index}>
                 <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }} >{todo.text}</span>
-                <button onClick={() => toggleTodo(index)}>Done</button>
-                <button onClick={() => deleteTodo(index)}>Delete</button>
+           <button className={styles.todoButton} onClick={() => toggleTodo(index)}>
+                    {todo.completed ? 'Undo' : 'Done'}
+                </button>
+                <button  className={styles.todoButton} onClick={() => deleteTodo(index)}>Delete</button>
             </li>
         </div>
+        </>
+       
     )
 }
 

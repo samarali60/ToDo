@@ -24,7 +24,7 @@ const TodoApp = () => {
     return (
         <>
             <TodoInput addTodo={addTodo} />
-            <ul>
+            <ul style={{ listStyleType: 'none', padding: 0 }}>
                 {todos.map((todo, idx) => {
                     return <TodoItem
                         key={uuid()}
